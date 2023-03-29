@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Task</title>
+</head>
+<body>
+    <div id="student" data-address="ktm" data-phone="9800" data-age="21">
+
+    </div>
+</body>
+</html>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+        changeClass();
+        getDomDataset(selector);
+        injectNewElementToDOm(domClassOrID, injectType, $HtmlCOntentORElement); //inject type means append or prepend
+
+        value = getValurFromInputField(elementSelector);
+
+        setValueToInputField(elementSelector, valueTobeSet);
+
+        postRequest ;
+
+        function changeDomClass(selector, tagetclass, classValue)
+        {
+            $(selector).addClass(classValue)
+            $(selector).addClass(classValue)
+        }
+
+        function getDomDataset(selector){
+            const student = document.getElementById(selector);
+            return student.dataset ;
+        }
+
+        function injectNewElementToDOm(selector, injectType, HtmlCOntentORElement )
+        {
+            //this will append a new element to dom
+           return $(selector).injectType(HtmlCOntentORElement);
+        }
+
+        function  getValurFromInputField(selector)
+        {
+            getValue = $(selector).val();
+        }
+        function setValueToInputField(elementSelector, valueTobeSet)
+        {
+            $(selector).val(valueTobeSet);
+        }
+
+        function postRequest()
+        {
+            request1 = "abc.com/api//v1/"
+            request2 = "xym.com/api/v1"
+            request3 = "somedomain.com/api/v1"
+            $req1Body = {
+                 phone: '123' 
+            }
+            $req2Body = {
+                 country: 'xyz' 
+            }
+            
+            $req3Body = {
+                 name: 'xyz' 
+            }
+            Promise.all([axios.post(request1,req1Body), axios.post(request1,req2Body), axios.post(equest3,req3Body)])
+            .then((responses) => {
+                const [url1respo, url2resp0, url3resp] = responses;
+                // do something
+            });
+
+
+         }
+    })
+</script>
